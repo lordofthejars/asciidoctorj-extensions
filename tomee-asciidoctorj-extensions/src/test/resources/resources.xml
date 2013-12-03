@@ -1,0 +1,25 @@
+<Resource id="database1" type="DataSource">
+    JdbcDriver = org.hsqldb.jdbcDriver
+    JdbcUrl = jdbc:hsqldb:mem:db1
+    UserName = sa
+    Password
+    JtaManaged = true
+</Resource>
+<Resource id="database2" type="DataSource">
+    JdbcDriver = org.hsqldb.jdbcDriver
+    JdbcUrl = jdbc:hsqldb:mem:db2
+    UserName = sa
+    Password
+    JtaManaged = true
+</Resource>
+<Resource id="config" class-name="org.superbiz.Configuration">
+   Url = http://foo.com/bar
+   Name = bar
+</Resource>
+<Resource id="Routed Datasource" type="org.apache.openejb.resource.jdbc.Router" provider="RoutedDataSource">
+    Router = My Router
+</Resource>
+<Container id="Foo" type="MESSAGE">
+</Container>
+<TransactionManager type="javax.transaction.TransactionManager">
+</TransactionManager>
