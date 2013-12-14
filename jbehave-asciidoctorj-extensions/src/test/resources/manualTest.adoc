@@ -1,0 +1,15 @@
+= Manual Tests
+
+In order to ensure the quality of our projects critical user stories are going to test it manually.
+
+These user stories are included in this document and testers should execute all of them.
+
+*Name:*
+
+*Date:*
+
+include::jbehave::userStories:src/**/*.story[initialLevel=1, manual=true]
+
+== Supervision
+
+Explanation of the global result of the test.
