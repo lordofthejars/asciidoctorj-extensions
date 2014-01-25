@@ -11,20 +11,20 @@
 			<dependency>
 				<groupId>org.asciidoctor</groupId>
 				<artifactId>asciidoctor-java-integration</artifactId>
-				<version>0.1.4</version>
+				<version>1.5.0.preview1</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.11</version>
 			</dependency>
-			
+
 			<dependency>
-                <groupId>org.jsoup</groupId>
-                <artifactId>jsoup</artifactId>
-                <version>1.7.2</version>
-            </dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>1.7.2</version>
+			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
@@ -37,5 +37,29 @@
 	<modules>
 		<module>tomee-asciidoctorj-extensions</module>
 		<module>jbehave-asciidoctorj-extensions</module>
+		<module>java-semantic-asciidoctorj-extensions</module>
 	</modules>
+
+	<repositories>
+
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+		</repository>
+
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>bintray</name>
+			<url>http://dl.bintray.com/lordofthejars/maven</url>
+		</repository>
+
+	</repositories>
+
 </project>

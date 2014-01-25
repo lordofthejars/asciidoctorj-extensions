@@ -26,7 +26,7 @@ public class WhenUserNeedsToIncludeUserStoriesInAsciiDoc {
     public void user_stories_should_be_embed_inside_document() throws IOException {
         
         Asciidoctor asciidoctor = Asciidoctor.Factory.create();
-        asciidoctor.extensionRegistry().includeProcessor(JBehaveUserStoriesIncludeProcessor.class);
+        asciidoctor.javaExtensionRegistry().includeProcessor(JBehaveUserStoriesIncludeProcessor.class);
         
         Options options = options().inPlace(false)
                 .toFile(new File(testFolder.getRoot(), "rendersample.html"))

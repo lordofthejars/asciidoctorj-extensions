@@ -123,7 +123,7 @@ public class WhenATomEEResourceFileIsProvided {
     public void documentation_should_be_rendered_with_TomEE_configuration() throws IOException {
         
         Asciidoctor asciidoctor = Asciidoctor.Factory.create();
-        asciidoctor.extensionRegistry().includeProcessor(TomEEResourcesIncludeProcessor.class);
+        asciidoctor.javaExtensionRegistry().includeProcessor(TomEEResourcesIncludeProcessor.class);
         
         Options options = options().inPlace(false)
                 .toFile(new File(testFolder.getRoot(), "rendersample.html"))

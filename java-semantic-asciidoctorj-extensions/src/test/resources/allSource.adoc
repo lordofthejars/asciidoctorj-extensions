@@ -1,0 +1,7 @@
+= Include All Source Code
+:sourcedir: target/test-classes
+
+[source,java]
+----
+include::{sourcedir}/MyClass.java[]
+----
