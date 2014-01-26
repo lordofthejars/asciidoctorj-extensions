@@ -18,7 +18,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 == TomEE Configuration
 
-include::tomee:/home/alex/git/asciidoctorj-extensions/tomee-asciidoctorj-extensions/src/test/resources/resources.xml[initialLevel=2]
+include::tomee:src/test/resources/resources.xml[initialLevel=2]
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
