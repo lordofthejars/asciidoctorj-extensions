@@ -6,6 +6,39 @@
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<name>asciidoctorj-extensions</name>
+	<description>AsciidoctorJ extensions.</description>
+	<url>https://github.com/lordofthejars/asciidoctorj-extensions</url>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/lordofthejars/asciidoctorj-extensions/issues</url>
+	</issueManagement>
+	<licenses>
+		<license>
+			<name>Apache License Version 2.0</name>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git@github.com:lordofthejars/asciidoctorj-extensions.git</connection>
+		<developerConnection>scm:git:git@github.com:lordofthejars/asciidoctorj-extensions.git</developerConnection>
+		<url>scm:git:git@github.com:lordofthejars/asciidoctorj-extensions.git</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>asotobu</id>
+			<name>Alex Soto Bueno</name>
+			<email>asotobu@gmail.com</email>
+		</developer>
+	</developers>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
