@@ -175,15 +175,14 @@
 					</plugin>
 				</plugins>
 			</build>
+			<distributionManagement>
+				<repository>
+					<id>bintray-lordofthejars-maven-asciidoctorj</id>
+					<name>lordofthejars-maven-asciidoctorj-extensions</name>
+					<url>https://api.bintray.com/maven/lordofthejars/maven/asciidoctorj-extensions</url>
+				</repository>
+			</distributionManagement>
 		</profile>
 	</profiles>
-
-	<distributionManagement>
-		<repository>
-			<id>bintray-lordofthejars-maven-asciidoctorj</id>
-			<name>lordofthejars-maven-asciidoctorj-extensions</name>
-			<url>https://api.bintray.com/maven/lordofthejars/maven/asciidoctorj-extensions</url>
-		</repository>
-	</distributionManagement>
 
 </project>
