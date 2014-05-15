@@ -22,9 +22,13 @@ public class MyClass {
 		System.out.println(test);
 	}
 	
-	public synchronized void mymethod(String a) {
+	public synchronized void mymethod1(String a) {
 		//yep
 		System.out.println("aaa");
 	}
-	
+
+    public void mymethod2(final String a) {
+
+        System.out.println("aaa"); // some comments
+    }
 }
