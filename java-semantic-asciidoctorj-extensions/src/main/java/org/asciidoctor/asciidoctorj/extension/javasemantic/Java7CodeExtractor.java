@@ -171,7 +171,7 @@ public class Java7CodeExtractor {
 			return pattern;
 		}
 
-		@Override
+        @Override
 		public void visit(CompilationUnit n, Map<String, Object> arg) {
 
 		}
@@ -655,7 +655,11 @@ public class Java7CodeExtractor {
 		StringBuilder stringBuilder = new StringBuilder();
 		
 		for (String string : content) {
-			stringBuilder.append(string.substring(initialIndex)).append(NEW_LINE);
+            // cope with code that has blank lines
+            if (string.length() < initialIndex)
+                stringBuilder.append(string).append(NEW_LINE);
+            else
+			    stringBuilder.append(string.substring(initialIndex)).append(NEW_LINE);
 		}
 		
 		return stringBuilder.toString();

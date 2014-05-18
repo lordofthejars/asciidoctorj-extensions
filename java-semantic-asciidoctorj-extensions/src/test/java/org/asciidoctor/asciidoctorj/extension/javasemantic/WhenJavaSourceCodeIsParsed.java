@@ -14,12 +14,17 @@ import com.github.antlrjavaparser.ParseException;
 
 public class WhenJavaSourceCodeIsParsed {
 
-	private static final String EXPECTED_METHOD = "public synchronized void mymethod(String a) {\n" + 
+	private static final String EXPECTED_METHOD1 = "public synchronized void mymethod1(String a) {\n" +
 			"	//yep\n" + 
 			"	System.out.println(\"aaa\");\n" + 
-			"}"; 
-	
-	private static final String EXPECTED_IMPORT = "import java.util.List;";
+			"}";
+
+    private static final String EXPECTED_METHOD2 = "public void mymethod2(final String a) {\n" +
+            "\n" +
+            "    System.out.println(\"aaa\"); // some comments\n" +
+            "}";
+
+    private static final String EXPECTED_IMPORT = "import java.util.List;";
 	
 	private static final String EXPECTED_CLASS = "public class MyClass {\n" + 
 			"	\n" + 
@@ -41,11 +46,14 @@ public class WhenJavaSourceCodeIsParsed {
 			"		System.out.println(test);\n" + 
 			"	}\n" + 
 			"	\n" + 
-			"	public synchronized void mymethod(String a) {\n" + 
+			"	public synchronized void mymethod1(String a) {\n" +
 			"		//yep\n" + 
 			"		System.out.println(\"aaa\");\n" + 
-			"	}\n" + 
-			"	\n" + 
+			"	}\n\n" +
+            "    public void mymethod2(final String a) {\n" +
+            "\n" +
+            "        System.out.println(\"aaa\"); // some comments\n" +
+            "    }\n" +
 			"}";
 	
 	private static final String EXPECTED_ENUM = "private enum MyEnum {\n" + 
@@ -67,18 +75,31 @@ public class WhenJavaSourceCodeIsParsed {
 			"}";
 	
 	@Test
-	public void only_set_method_should_be_extracted_if_method_attribute_set() throws ParseException, IOException {
+	public void only_set_method_should_be_extracted_if_method_attribute_set1() throws ParseException, IOException {
 
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("method", "void mymethod(String)");
+		params.put("method", "void mymethod1(String)");
 		
 
 		Java7CodeExtractor Java7CodeExtractor = new Java7CodeExtractor();
 		final InputStream resourceAsStream = ClassLoader.class.getResourceAsStream("/MyClass.java");
 		
-		assertThat(Java7CodeExtractor.extract(resourceAsStream, params).trim(), is(EXPECTED_METHOD));
+		assertThat(Java7CodeExtractor.extract(resourceAsStream, params).trim(), is(EXPECTED_METHOD1));
 
 	}
+
+    @Test
+    public void only_set_method_should_be_extracted_if_method_attribute_set2() throws ParseException, IOException {
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("method", "void mymethod2(String)");
+
+        Java7CodeExtractor Java7CodeExtractor = new Java7CodeExtractor();
+        final InputStream resourceAsStream = ClassLoader.class.getResourceAsStream("/MyClass.java");
+
+        assertThat(Java7CodeExtractor.extract(resourceAsStream, params).trim(), is(EXPECTED_METHOD2));
+
+    }
 
 	
 	@Test
